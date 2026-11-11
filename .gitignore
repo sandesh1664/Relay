@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+# Build output
+dist/
+.next/
+# Local data and secrets
+.env*
+.dev.vars*
+.wrangler/
+.sites-runtime/
+outputs/
