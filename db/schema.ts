@@ -1,0 +1,4 @@
+import { sqliteTable, text, integer, primaryKey } from 'drizzle-orm/sqlite-core';
+export const scenes = sqliteTable('scenes', { id:text('id').primaryKey(), parent:text('parent'), title:text('title').notNull(), body:text('body').notNull(), genre:text('genre').notNull(), author:text('author').notNull(), userId:text('user_id').notNull(), media:text('media'), mediaType:text('media_type'), created:integer('created').notNull() });
+export const reactions=sqliteTable('reactions',{scene:text('scene').notNull(),user:text('user').notNull(),kind:text('kind').notNull() },t=>[primaryKey({columns:[t.scene,t.user,t.kind]})]);
+export const comments=sqliteTable('comments',{id:text('id').primaryKey(),scene:text('scene').notNull(),user:text('user').notNull(),author:text('author').notNull(),body:text('body').notNull(),created:integer('created').notNull()});
